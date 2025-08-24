@@ -10,15 +10,15 @@ env
 
 ### 01_02 Pipes and redirection
 
-- `|` -> Data Pipe ( Send data to another application )
-- `>` -> Output Redirect ( Redirect the output to another place/file )
-    - `>` -> Truncate existing data and rewrite.
-    - `>>` -> Append data to the existing data.
-- `<` -> Input Redirection
-    - `<` -> Single import
-    - `<<` -> Called "Here Document"
-        - Style 01: `{{APP}} << [Input ends indicator keyword]`. This treats the end keyword as a part of the data.
-        - Style 02: `{{APP}} <<- [Input ends indicator keyword]`. This pattern exclude the end keyword from the data.
+- `|` — Pipe: Sends the output of one command as input to another.
+- `>` — Output Redirection: Redirects output to a file, overwriting existing content.
+    - `>` — Overwrites the file.
+    - `>>` — Appends to the file.
+- `<` — Input Redirection: Reads input from a file.
+    - `<` — Reads from a file.
+    - `<<` — Here Document: Passes multiple lines of input directly to a command.
+        - Style 1: `{{APP}} << [END]` — Treats the end keyword as part of the input.
+        - Style 2: `{{APP}} <<- [END]` — Ignores leading tabs before the end keyword.
 
 ```bash
 cat lorem.txt
@@ -193,4 +193,4 @@ echo $(( 4*5 ))
 echo $(( 4 / 5 )) # 0
 ```
 
-NOTE: Bash can do calculation with integers only. Doesn't support float values
+**Note:** Bash only supports integer arithmetic. Calculations with floating-point numbers are not
