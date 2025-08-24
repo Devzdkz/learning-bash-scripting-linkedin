@@ -36,6 +36,11 @@ env
 
 ### 01_02 Pipes and redirections
 
+- `|` -> pipe ( Send data to another application )
+- `>` -> redirect ( Redirect the output to another place )
+    - `>` -> Truncate existing data and rewrite.
+    - `>>` -> Append data to the existing data.
+
 ```bash
 cat lorem.txt
 clear
